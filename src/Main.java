@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Main {
 
-    public static int followerRequests;
+    static int followerRequests;
 
     public static void main(String[] args) {
         ArrayList<String> textFiles = listAllFiles(new File("superstar"));
@@ -18,6 +18,8 @@ public class Main {
     private static ArrayList<String> listAllFiles(File folder){
         ArrayList<String> textFiles = new ArrayList<>();
         File[] fileNames = folder.listFiles();
+
+        assert fileNames != null;
         for(File file : fileNames){
             if(file.isDirectory()){
                 listAllFiles(file);
