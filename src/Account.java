@@ -1,24 +1,24 @@
 import java.util.ArrayList;
 
-public class Account {
+class Account {
     private String name;
     private ArrayList<Account> follower;
 
-    public Account(String name) {
+    Account(String name) {
         this.name = name;
         this.follower = new ArrayList<>();
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public boolean isFollower(Account account){
+    boolean isFollower(Account account){
         Main.followerRequests += 1;
         return follower.contains(account);
     }
 
-    public void addFollower(Account account){
+    void addFollower(Account account){
         follower.add(account);
     }
 }
